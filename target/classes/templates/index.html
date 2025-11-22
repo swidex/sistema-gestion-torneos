@@ -5,70 +5,129 @@
   <title>Inicio • Fútbol Club</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  
   <style>
-    :root {
-      --primary-color: #1e40af;
-      --secondary-color: #3b82f6;
-      --accent-color: #f59e0b;
-      --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-    }
-    
-    body {
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    .hero-section {
-      background: var(--gradient-primary);
-      color: white;
-      border-radius: 16px;
-      padding: 2.5rem;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-    
-    .feature-card {
-      background: white;
-      border-radius: 16px;
-      padding: 1.5rem;
-      height: 100%;
-      transition: all 0.3s ease;
-      border: none;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    }
-    
-    .feature-card .card-icon {
-      width: 70px;
-      height: 70px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-      background: var(--gradient-primary);
-      color: white;
-      font-size: 1.8rem;
-    }
-    
-    .stats-section {
-      background: white;
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin-top: 2.5rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-    
-    .stat-value {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--primary-color);
-    }
+	
+	/* Atlético Bucaramanga 2025 - Index Creativo Fondo Blanco */
+	@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&display=swap');
+
+	body {
+	    background: #ffffff;
+	    font-family: 'Orbitron', sans-serif;
+	    color: #222;
+	    overflow-x: hidden;
+	}
+
+	.hero-section {
+	    background: linear-gradient(135deg, #FFB81C 0%, #008037 100%);
+	    border-radius: 30px;
+	    padding: 5rem 2rem;
+	    margin: 2rem 0 3rem;
+	    text-align: center;
+	    position: relative;
+	    overflow: hidden;
+	    box-shadow: 0 25px 60px rgba(0,128,55,0.25);
+	    animation: heroPulse 6s ease-in-out infinite;
+	}
+
+	.hero-section::before {
+	    content: '';
+	    position: absolute;
+	    top: -50%; left: -50%;
+	    width: 200%; height: 200%;
+	    background: repeating-conic-gradient(from 0deg at 50% 50%, 
+	                rgba(255,184,28,0.1) 0deg, transparent 20deg, 
+	                rgba(0,128,55,0.1) 40deg, transparent 60deg);
+	    animation: rotate 20s linear infinite;
+	}
+
+	.hero-section h1 {
+	    font-size: 5.5rem;
+	    font-weight: 800;
+	    color: #000;
+	    text-shadow: 4px 4px 0 #FFB81C, -4px -4px 0 #008037;
+	    animation: titleJump 3s ease-in-out infinite;
+	}
+
+	.hero-section p {
+	    font-size: 1.5rem;
+	    color: white;
+	    font-weight: 600;
+	}
+
+	.feature-card {
+	    background: white;
+	    border-radius: 24px;
+	    padding: 2.5rem 1.5rem;
+	    text-align: center;
+	    transition: all 0.5s ease;
+	    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+	    border: 3px solid transparent;
+	}
+
+	.feature-card:hover {
+	    transform: translateY(-20px) scale(1.05);
+	    box-shadow: 0 30px 70px rgba(0,128,55,0.25);
+	    border-color: #008037;
+	}
+
+	.feature-card:hover .card-icon i {
+	    color: #FFB81C;
+	    transform: scale(1.4);
+	    filter: drop-shadow(0 0 20px #008037);
+	}
+
+	.card-icon i {
+	    font-size: 4rem;
+	    color: #008037;
+	    margin-bottom: 1rem;
+	    transition: all 0.5s ease;
+	}
+
+	.card-title {
+	    color: #008037;
+	    font-size: 1.6rem;
+	    font-weight: 800;
+	}
+
+	.card-description {
+	    color: #555;
+	}
+
+	.stats-section {
+	    background: linear-gradient(135deg, #008037 0%, #FFB81C 100%);
+	    border-radius: 30px;
+	    padding: 3rem;
+	    margin-top: 4rem;
+	    text-align: center;
+	    color: white;
+	}
+
+	.stat-value {
+	    font-size: 3.8rem;
+	    font-weight: 800;
+	    color: #000;
+	    text-shadow: 3px 3px 8px rgba(255,255,255,0.5);
+	}
+
+	.stats-section .small {
+	    color: #000;
+	    font-weight: bold;
+	    font-size: 1.1rem;
+	}
+
+	/* Animaciones */
+	@keyframes heroPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+	@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+	@keyframes titleJump { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+	@media (max-width: 768px) {
+	    .hero-section h1 { font-size: 3.5rem; }
+	    .feature-card:hover { transform: translateY(-10px) scale(1.03); }
+	}
+	
   </style>
+  
 </head>
 <body class="bg-light">
   <div th:replace="~{fragments/layout :: navbar}"></div>
